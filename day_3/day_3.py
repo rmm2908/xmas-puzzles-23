@@ -122,8 +122,8 @@ def find_valid_nums(matrix):
     for i, line in enumerate(matrix):
         line_len = len(line)
         num_start = 0
-        for j in range(line_len - 1):
-            if line[j].isdecimal() and j != 0 and not line[j - 1].isdecimal():
+        for j in range(1, line_len - 1):
+            if line[j].isdecimal() and not line[j - 1].isdecimal():
                 num_start = j
             if line[j].isdecimal() and not line[j + 1].isdecimal():
                 number = Number(matrix, i, num_start, j)
@@ -137,8 +137,8 @@ def find_gear_ratio(matrix):
     for i, line in enumerate(matrix):
         line_len = len(line)
         num_start = 0
-        for j in range(line_len - 1):
-            if line[j].isdecimal() and j != 0 and not line[j - 1].isdecimal():
+        for j in range(1, line_len - 1):
+            if line[j].isdecimal() and not line[j - 1].isdecimal():
                 num_start = j
             if line[j].isdecimal() and not line[j + 1].isdecimal():
                 number = Number(matrix, i, num_start, j)
