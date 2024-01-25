@@ -28,3 +28,18 @@ class NumberMapper:
             if number in num_range:
                 return num_range.transform(number)
         return number
+
+
+def main():
+    with open(os.path.join(os.path.dirname(__file__), "input.txt")) as file:
+        lines = file.readlines()
+    numbers = lines[0].split(" ")
+    numbers.pop(0)
+    numbers = [int(number) for number in numbers]
+    lines.pop(0)
+    lines = list(filter(lambda line: line != "\n", lines))
+    print(lines)
+
+
+if __name__ == "__main__":
+    main()
